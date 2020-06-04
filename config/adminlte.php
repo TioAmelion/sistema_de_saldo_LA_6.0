@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Sistema de Saldo',
+    'title' => 'Sistema de ACL',
     'title_prefix' => '',
     'title_postfix' => '',
 

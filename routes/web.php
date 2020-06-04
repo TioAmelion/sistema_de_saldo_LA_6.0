@@ -6,11 +6,20 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'admin', 'prefix' => 'adm
 
 	Route::get('/', 'AdminController@index')->name('admin.home');
 
-	//Balance CRUD OPERATIONS
-	Route::get('balanco', 'BalanceController@index')->name('admin.balance');
-	Route::get('deposito', 'BalanceController@deposit')->name('admin.deposit');
-	Route::post('deposito/cadastrar', 'BalanceController@store')->name('admin.deposit.store');
-});
+	Route::get('create', 'AdminController@create')->name('admin.create');
+
+	Route::get('listar-posts', 'PostController@index')->name('admin.listarPost');
+	Route::get('ediar/{id}/post', 'AdminController@update')->name('admin.update');
+
+	Route::get('listar-users', 'AdminController@listarUser')->name('admin.listarUser');
+	Route::get('roles-permissions', 'AdminController@rolesPermissions')->name('admin.rolesPermissions');
+
+	Route::get('listar-permissions', 'PermissionController@index')->name('admin.permission');
+
+	Route::get('listar-roles', 'RoleController@index')->name('admin.role');
+
+
+	});
 
 
 Auth::routes();
